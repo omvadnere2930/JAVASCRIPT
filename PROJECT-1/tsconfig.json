@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",           // Output JavaScript version (ES6)
+    "module": "es6",           // Use ES6 modules
+    "rootDir": "./src",        // Input TypeScript files location
+    "outDir": "./dist",        // Output JavaScript files location
+    "strict": true,            // Enable strict type-checking
+    // "sourceMap": true          // Generate source maps for debugging
+  },
+  "include": ["src/**/*.ts"]    // Include all TypeScript files in src
+}
