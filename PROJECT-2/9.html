@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h3 class="mb-3">Print a square star pattern of 5x5.</h3>
+    <div id="pattern"></div>
+
+    <script>
+        let size = 5;
+        let output = '';
+
+        for (let i = 0; i < size; i++) {
+            output += '* '.repeat(size) + '<br>';
+        }
+
+        document.getElementById('pattern').innerHTML = output;
+    </script>
+</body>
+
+</html>
