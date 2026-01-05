@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card p-4 mx-auto" style="max-width: 450px;">
+            <h4 class="text-center mb-3">Mathematics</h4>
+            <div class="mb-3">
+                <input type="number" id="values" placeholder="Enter any value">
+            </div>
+            <div class="d-grid">
+                <button type="button" class="btn btn-success" onclick="calc()">
+                    Add
+                </button>
+                <p>values:<span id="result"></span></p>
+                <p>Total:<span id="total"></span></p>
+                <p>Sum:<span id="sum"></span></p>
+                <p>Average:<span id="average"></span></p>
+                <p>Minimum:<span id="minimum"></span></p>
+                <p>Maximum:<span id="maximum"></span></p>
+
+            </div>
+        </div>
+    </div>
+    <footer class="text-end mx-auto mt-4" style="max-width: 300px;">
+    <font color="magenta">🎬 Poster Credit</font>
+    <br>
+    <font face="MV Boli"> Designed by: om vadnere</font>
+    <br>
+    <font face="MV Boli">Contact: omvadnere2930@gmail.com</font>
+</footer>
+    <script>
+        let arr = [];
+function calc() {
+    let values = Number(document.getElementById("values").value);
+    if (values <= 0) {
+        document.getElementById("values").value = "";
+        alert("Negative value & zero is Not Allowed");
+        return;
+    }
+    arr.push(values);
+    const length = arr.length;
+    let sum = arr.reduce((a, b) => a + b, 0);
+    document.getElementById('result').innerHTML = arr.join(" | ");
+    document.getElementById('sum').innerHTML = sum;
+    document.getElementById('total').innerHTML = length;
+    document.getElementById('average').innerHTML = sum / length;
+    document.getElementById('minimum').innerHTML = Math.min(...arr);
+    document.getElementById('maximum').innerHTML = Math.max(...arr);
+    document.getElementById('values').value = "";
+}
+    </script>
+</body>
+
+</html>
