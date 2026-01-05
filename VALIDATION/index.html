@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            min-height: 100vh;
+            background-image: url("background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+              display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: 420px;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.472);
+            box-shadow: 0 0 25px rgba(14, 14, 14, 0.6);
+            color: #fff;
+            opacity: 3;  
+        } 
+        .card h3{
+            color: green;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <form action="">
+            <h3 class="text-center">REGESTRATION FORM</h3>
+            <div class="mt-4">
+                <h5 class="text-start">Name</h5>
+                <input type="text" class="form-control text-dark" placeholder="Enter Your Name" id="u_name" >
+                <span id="name_error" class="text-danger"></span>
+            </div>
+            <div class="mt-4">
+                <h5 class="text-start">Email Id</h5>
+                <input type="email" class="form-control text-dark" placeholder="Enter Your EmailId" id="u_email">
+                <span id="email_error" class="text-danger"></span>
+            </div>
+            <div class="mt-4">
+                <h5 class="text-start">Password</h5>
+                <input type="password" class="form-control text-dark" placeholder="Enter Your Password" id="u_password">
+                <span id="password_error" class="text-danger"></span>
+            </div>
+            <div class="mt-4">
+                <h5 class="text-start">Mobile Number</h5>
+                <input type="number" class="form-control text-dark" placeholder="Enter Your Mobile Number" id="u_mobile">
+                <span id="mobile_error" class="text-danger"></span>
+            </div>
+            <div class="mt-5">
+                <button type="button" onclick="dataSubmit()" class="btn btn-outline-success w-100">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="validation.js"></script>
+</body>
+
+</html>
