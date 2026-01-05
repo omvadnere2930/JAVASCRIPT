@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+        .slider-card {
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .slider-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .indicators span {
+            height: 10px;
+            width: 10px;
+            background: #ccc;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        .indicators .active {
+            background: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="slider-card bg-white text-center p-3">
+    <img id="slideimg" alt="slider image">
+
+    <div class="mt-3">
+        <button onclick="Prev()" class="btn btn-outline-primary me-2">Prev</button>
+        <button onclick="Next()" class="btn btn-primary">Next</button>
+    </div>
+
+    <div class="indicators mt-3" id="dots"></div>
+</div>
+<footer class="text-end mx-auto mt-4" style="max-width: 300px;">
+    <font color="magenta">🎬 Poster Credit</font>
+    <br>
+    <font face="MV Boli"> Designed by: om vadnere</font>
+    <br>
+    <font face="MV Boli">Contact: omvadnere2930@gmail.com</font>
+</footer>
+
+<script>
+    const sliders = [
+        "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+        "https://www.shutterstock.com/image-photo/sun-sets-behind-mountain-ranges-600nw-2479236003.jpg",
+        "https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_1280.jpg",
+        "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg"  
+    ];
+
+    let index = 0;
+
+    function ShowSlider() {
+        document.getElementById("slideimg").src = sliders[index];
+        updateDots();
+    }
+
+    function Next() {
+        index = (index + 1) % sliders.length;
+        ShowSlider();
+    }
+
+    function Prev() {
+        index = (index - 1 + sliders.length) % sliders.length;
+        ShowSlider();
+    }
+
+    function updateDots() {
+        const dots = document.getElementById("dots");
+        dots.innerHTML = "";
+        sliders.forEach((_, i) => {
+            const span = document.createElement("span");
+            if (i === index) span.classList.add("active");
+            dots.appendChild(span);
+        });
+    }
+
+    ShowSlider();
+
+
+    setInterval(()=>{
+        Next()
+    },1000)
+</script>
+
+</body>
+</html>
