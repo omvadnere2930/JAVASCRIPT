@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-lg-6 mx-auto my-5 p-5 shadow">
+        <h4 class="text-danger text-end">
+            Time Left: <span id="timer">02:00</span>
+        </h4>
+        <h2 id="question"></h2>
+        <div>
+            <input type="radio" class="form-check-input" name="option" value="0">
+            <span id="option1"></span>
+        </div>
+        <div>
+            <input type="radio" class="form-check-input" name="option" value="1">
+            <span id="option2"></span>
+        </div>
+        <div>
+            <input type="radio" class="form-check-input" name="option" value="2">
+            <span id="option3"></span>
+        </div>
+        <div>
+            <input type="radio" class="form-check-input" name="option" value="3">
+            <span id="option4"></span>
+        </div>
+        <div class="btn-group">
+            <button onclick="prevQuestion()" id="prev" class="btn btn-info">Prev</button>
+            <button onclick="nextQuestion()" id="next" class="btn btn-warning">Next</button>
+            <button id="output" class="btn btn-success" onclick="Result()">Sumbit</button>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
